@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: tuuktuc86.github.io/al-folio/sitemap.xml
+Sitemap: tuuktuc86.github.io/sitemap.xml
