@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: tuuktuc86.github.io/sitemap.xml
+Sitemap: https://tuuktuc86.github.io/sitemap.xml
