@@ -368,14 +368,14 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-attended-ces-2025",
+    },{id: "news-winner-of-korea-talent-award-of-korea",
+          title: 'Winner of Korea Talent Award of Korea',
+          description: "",
+          section: "News",},{id: "news-attended-ces-2025",
           title: 'Attended CES 2025',
           description: "",
           section: "News",},{id: "news-joined-the-accs-lab-at-kaist",
           title: 'Joined the ACCS Lab at KAIST',
-          description: "",
-          section: "News",},{id: "news-winner-of-korea-talent-award-of-korea",
-          title: 'Winner of Korea Talent Award of Korea',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
