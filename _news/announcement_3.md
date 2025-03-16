@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
- Joined the ACCS Lab at KAIST
+Joined the ACCS Lab at KAIST
