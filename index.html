@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- [Metadata & Analytics] -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ7FTRYYRD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CZ7FTRYYRD');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yechan Lee | Graduate Research Assistant at ACSS</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      /* Bright & Sophisticated Violet Palette */
+      --primary: #7c3aed;        
+      --primary-dark: #6d28d9;
+      --primary-soft: rgba(124, 58, 237, 0.08);
+      
+      --bg-base: #f8fafc;        
+      --bg-canvas: #ffffff;      
+      --bg-card: #f1f5f9;        
+      
+      --accent: #a78bfa;         
+      --accent-glow: rgba(124, 58, 237, 0.15);
+      
+      --text-main: #0f172a;      
+      --text-muted: #64748b;     
+      
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --radius-lg: 24px;
+      --radius-sm: 12px;
+
+      --font-main: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding-bottom: 5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: var(--bg-canvas);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      position: relative;
+      padding: 5rem 2rem 4rem 2rem;
+      background: linear-gradient(180deg, var(--bg-card) 0%, transparent 100%);
+      text-align: center;
+    }
+
+    .profile-wrap {
+      position: relative;
+      /* Increased size and adjusted to rectangular aspect ratio */
+      width: 180px; 
+      height: 225px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      /* Changed from 50% (circle) to 16px (rounded rectangle) */
+      border-radius: 16px;
+      display: block;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.3);
+      background-color: #fff;
+    }
+
+    .name {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .role { font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.4rem; font-weight: 600; }
+    .role strong { color: var(--primary); font-weight: 800; }
+    .degree { font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; font-weight: 500; font-family: var(--font-mono); }
+
+    .expertise-row {
+      display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+
+    .exp-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid var(--border-subtle);
+      color: var(--text-main); padding: 6px 16px;
+      border-radius: 99px; font-size: 0.85rem; font-weight: 700;
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.03);
+      transition: all 0.2s ease;
+    }
+    .exp-tag i { color: var(--primary); }
+    .exp-tag:hover { 
+      border-color: var(--primary); 
+      transform: translateY(-2px); 
+      background: var(--primary-soft);
+    }
+
+    .social-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .social-btn {
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; background: #fff; border: 1px solid var(--border-subtle); 
+      color: var(--text-muted); transition: all 0.3s; text-decoration: none; font-size: 1.2rem;
+    }
+    .social-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    }
+
+    /* --- STICKY NAV --- */
+    .nav-bar {
+      position: sticky; top: 0.5rem; z-index: 100;
+      margin: 0 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      padding: 0.4rem;
+      display: flex; justify-content: center; gap: 0.3rem;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav-item {
+      padding: 0.4rem 1rem; border-radius: 10px;
+      text-decoration: none; color: var(--text-muted); font-weight: 700; font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .nav-item:hover { color: var(--text-main); background: var(--bg-card); }
+    .nav-item.active { background: var(--primary); color: #fff; }
+
+    /* --- CONTENT --- */
+    .content { padding: 4rem 3.5rem; }
+    section { margin-bottom: 6rem; scroll-margin-top: 5rem; }
+
+    .section-header {
+      display: flex; flex-direction: column; gap: 1rem;
+      margin-bottom: 2.5rem; border-bottom: 2px solid var(--bg-card);
+      padding-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem; font-weight: 900; color: var(--text-main);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-title::before {
+      content: ""; width: 4px; height: 1.4rem; background: var(--primary); border-radius: 4px;
+    }
+
+    .about-text { font-size: 1.1rem; color: var(--text-main); font-weight: 500; line-height: 1.8; }
+    .about-text strong { color: var(--primary); font-weight: 800; }
+
+    /* --- FILTER UI --- */
+    .filters { width: 100%; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .filter-tabs { display: flex; gap: 4px; background: var(--bg-card); padding: 4px; border-radius: 12px; }
+    .filter-btn {
+      background: transparent; border: none; padding: 6px 14px;
+      font-size: 0.85rem; font-weight: 700; color: var(--text-muted);
+      cursor: pointer; transition: 0.2s; border-radius: 8px;
+    }
+    .filter-btn.active { background: #fff; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .conf-select {
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: 10px; padding: 8px 12px; font-weight: 700; color: var(--text-main);
+      outline: none; cursor: pointer; font-size: 0.85rem;
+    }
+
+    /* --- COMMON CARDS --- */
+    .pub-row, .proj-row {
+      display: flex; gap: 1.5rem; padding: 1.75rem; margin-bottom: 1.5rem;
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); transition: all 0.3s ease;
+    }
+    .pub-row:hover, .proj-row:hover {
+      transform: translateY(-4px); border-color: var(--primary);
+      box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1);
+    }
+    .pub-thumb, .proj-thumb {
+      width: 160px; height: 100px; flex-shrink: 0;
+      border-radius: 8px; overflow: hidden; background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+    }
+    .pub-thumb img, .proj-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+    .pub-data, .proj-data { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .pub-title, .proj-title { font-weight: 800; font-size: 1.15rem; line-height: 1.4; margin-bottom: 8px; color: var(--text-main); }
+    .pub-authors, .proj-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; font-weight: 500; }
+    .pub-authors strong { color: var(--primary); font-weight: 800; }
+
+    .proj-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+    .proj-tags-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    
+    .proj-github-link {
+      color: var(--primary); text-decoration: none; font-weight: 700;
+      border: 1px solid var(--primary); padding: 2px 8px;
+      border-radius: 6px; font-size: 0.7rem; transition: 0.2s;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .proj-github-link:hover { background: var(--primary); color: #fff; }
+
+    .pub-meta, .proj-meta { margin-bottom: 12px; }
+    .badge-conf, .badge-tag { color: var(--primary); font-weight: 800; font-family: var(--font-mono); font-size: 0.85rem; }
+    .badge-year { background: var(--bg-card); color: var(--text-main); padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; }
+
+    .pub-links, .proj-links { display: flex; gap: 8px; }
+    .pub-links a, .proj-links a {
+      color: var(--text-muted); text-decoration: none; font-weight: 700;
+      border: 1px solid var(--border-subtle); padding: 4px 12px;
+      border-radius: 8px; font-size: 0.75rem; transition: 0.2s;
+    }
+    .pub-links a:hover, .proj-links a:hover { border-color: var(--primary); color: #fff; background: var(--primary); }
+
+    /* --- TOGGLE & LIST ITEMS --- */
+    .list-item {
+      display: flex; gap: 1.5rem; margin-bottom: 1.5rem;
+      padding: 1.25rem; background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); align-items: center;
+    }
+    .list-date { font-family: var(--font-mono); font-weight: 800; color: var(--primary); min-width: 100px; font-size: 0.95rem; }
+    .list-content h4 { font-weight: 800; color: var(--text-main); font-size: 1.05rem; }
+    .list-content p { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .news-link { color: var(--primary); margin-left: 8px; transition: 0.2s; text-decoration: none; }
+    .news-link:hover { opacity: 0.6; color: var(--primary-dark); }
+
+    .exp-details {
+      margin-top: 1rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #fff;
+    }
+    .exp-details summary {
+      padding: 0.75rem 1rem;
+      background: var(--bg-card);
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--primary);
+      outline: none;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .exp-details summary::after {
+      content: '\f078';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      transition: transform 0.3s;
+    }
+    .exp-details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .exp-item { display: flex; gap: 2rem; margin-bottom: 3rem; position: relative; }
+    .exp-dot {
+      width: 14px; height: 14px; border-radius: 50%; background: #fff;
+      border: 3px solid var(--primary); margin-top: 6px; flex-shrink: 0; z-index: 2;
+    }
+    .exp-item::after {
+      content: ""; position: absolute; left: 6px; top: 20px; bottom: -30px;
+      width: 2px; background: var(--bg-card); z-index: 1;
+    }
+    .exp-item:last-child::after { display: none; }
+    .exp-content h3 { font-size: 1.2rem; font-weight: 900; color: var(--text-main); margin-bottom: 4px; }
+    .exp-content .org { color: var(--primary); font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; }
+    .exp-content .time { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+
+    .lecture-table-wrapper { overflow-x: auto; }
+    .lecture-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .lecture-table th, .lecture-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--bg-card); }
+    .lecture-table th { background: rgba(124, 58, 237, 0.03); color: var(--text-main); font-weight: 800; }
+    .lecture-table td { color: var(--text-muted); font-weight: 500; }
+
+    .site-footer { padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; background: var(--bg-card); }
+
+    @media (max-width: 600px) {
+      .wrapper { margin: 0; border-radius: 0; border: none; }
+      .content { padding: 2.5rem 1.5rem; }
+      .pub-row, .proj-row { flex-direction: column; }
+      .pub-thumb, .proj-thumb { width: 100%; height: 160px; }
+      .nav-bar { margin: 0 1rem; }
+      .profile-wrap { width: 150px; height: 187px; } /* Slightly smaller on mobile but still rectangular */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="hero">
+      <div class="profile-wrap">
+        <img src="figures\yechanLee.jpg" alt="Yechan Lee" class="profile-img"
+             onerror="this.src='https://ui-avatars.com/api/?name=YL&background=7c3aed&color=fff&size=300'">
+      </div>
+
+      <h1 class="name">Yechan Lee</h1>
+      <div class="role">Master's Student at <strong>KAIST</strong></div>
+      <div class="degree">Graduate Research Assistant at ACSS</div>
+
+      <div class="expertise-row">
+        <span class="exp-tag"><i class="fas fa-robot"></i> Reinforcement Learning</span>
+        <span class="exp-tag"><i class="fas fa-brain"></i> Generative Models</span>
+        <span class="exp-tag"><i class="fas fa-cogs"></i> Robotics</span>
+      </div>
+
+      <div class="social-row">
+        <!-- Social Icons -->
+        <a href="https://www.overleaf.com/read/rwjbjbnqffng#bb48e4" class="social-btn" target="_blank" rel="noopener" title="Curriculum Vitae">
+          <i class="far fa-file-lines"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=ly_l1HAAAAAJ&hl=ko&authuser=1" class="social-btn" target="_blank" rel="noopener" title="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/tuuktuc86/" class="social-btn" target="_blank" rel="noopener" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/tuuktuc86" class="social-btn" target="_blank" rel="noopener" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:tuuktuc86@kaist.ac.kr" class="social-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://blog.naver.com/tuuktuc86" class="social-btn" target="_blank" rel="noopener" title="Naver Blog">
+          <i class="fas fa-pen-nib"></i>
+        </a>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <a href="#about" class="nav-item active">About</a>
+      <a href="#publications" class="nav-item">Research</a>
+      <a href="#projects" class="nav-item">Projects</a>
+      <a href="#experience" class="nav-item">Experience</a>
+      <a href="#awards" class="nav-item">Awards</a>
+      <a href="#education" class="nav-item">Education</a>
+    </nav>
+
+    <main class="content">
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-title">About</div>
+        <div class="about-text">
+          <p>
+            I am a master’s student at <strong>KAIST</strong>. I am currently a member of the <strong>Autonomous Control for Stochastic Systems Lab (ACSL)</strong> advised by <strong>SooJean Han</strong>. My research interests are reinforcement learning robotics and generative models.
+          </p>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications">
+        <div class="section-header">
+          <h2 class="section-title">Publications</h2>
+          <div class="filters">
+            <div class="filter-tabs" id="category-tabs">
+              <button class="filter-btn active" data-category="all">All</button>
+              <button class="filter-btn" data-category="preprint">Preprint</button>
+              <button class="filter-btn" data-category="domestic">Domestic</button>
+            </div>
+            <select id="conf-select" class="conf-select">
+              <option value="all">All Venues</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pub-container" id="pub-list">
+          <div class="pub-row" data-category="all domestic" data-conf="dbpia" data-year="2026">
+            <div class="pub-thumb">
+              <img src="" onerror="this.src='https://placehold.co/300x200/f1f5f9/7c3aed?text=Balanced+DAgger'">
+            </div>
+            <div class="pub-data">
+              <div class="pub-title">Balanced DAgger: Safe Online Imitation Learning for Robot Manipulation with Direction Balanced RND and Conformal Prediction</div>
+              <div class="pub-authors">Hyewon Choi, Minseok Jeong, Sanghun Park, Jeongyong Yang, Kwangbin Lee, <strong>Yechan Lee</strong>, SooJean Han, Minsu Jang, Taewoo Kim</div>
+              <div class="pub-meta">
+                <span class="badge-conf">dbpia</span>
+                <span class="badge-year">2026</span>
+              </div>
+              <div class="pub-links"></div>
+            </div>
+          </div>
+
+          <div class="pub-row" data-category="all preprint" data-conf="arXiv" data-year="2025">
+            <div class="pub-thumb">
+              <img src="" onerror="this.src='https://placehold.co/300x200/f1f5f9/7c3aed?text=CFG-EC'">
+            </div>
+            <div class="pub-data">
+              <div class="pub-title">CFG-EC: Error Correction Classifier-Free Guidance</div>
+              <div class="pub-authors">Nakkyu Yang, <strong>Yechan Lee</strong>, SooJean Han</div>
+              <div class="pub-meta">
+                <span class="badge-conf">arXiv</span>
+                <span class="badge-year">2025</span>
+              </div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2511.14075" target="_blank" rel="noopener">PAPER (arXiv)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="pub-container">
+          <!-- Main Project: Efficient DAgger -->
+          <div class="proj-row">
+            <div class="proj-thumb">
+              <img src="" onerror="this.src='https://placehold.co/300x200/f1f5f9/7c3aed?text=Efficient+DAgger+GIF'">
+            </div>
+            <div class="proj-data">
+              <div class="proj-title">Efficient DAgger for Failure Driven Robot Learning</div>
+              <div class="proj-desc">
+                Modified RND (Random Network Distillation) to reduce overgeneralization and integrated it with DAgger for failure prediction and human guided policy improvement in collaboration with ETRI.
+              </div>
+              <div class="proj-meta">
+                <div class="proj-meta-row">
+                  <span class="badge-year">2025.06 - 2025.12</span>
+                  <a href="https://github.com/tuuktuc86/fail-detect_acss" class="proj-github-link" target="_blank"><i class="fab fa-github"></i> GITHUB</a>
+                </div>
+                <div class="proj-tags-row">
+                  <span class="badge-tag">#IsaacSim</span>
+                  <span class="badge-tag">#DAgger</span>
+                  <span class="badge-tag">#Robot_Manipulator</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle: Additional Projects -->
+          <details class="exp-details" style="margin-top: 2rem; border: 1px solid var(--border-subtle);">
+            <summary style="padding: 1.25rem;">
+              <span style="font-weight: 900; font-size: 1.15rem; color: var(--text-main);">Additional Projects</span>
+            </summary>
+            <div style="padding: 1rem 0;">
+              
+              <!-- Project: RobotPet -->
+              <div class="proj-row" style="border: none; border-bottom: 1px solid var(--bg-card); border-radius: 0; margin-bottom: 0;">
+                <div class="proj-thumb">
+                  <img src="" onerror="this.src='https://placehold.co/300x200/f1f5f9/7c3aed?text=RobotPet+GIF'">
+                </div>
+                <div class="proj-data">
+                  <div class="proj-title">Robot Pet for Elderly and Disabled Assistance</div>
+                  <div class="proj-desc">
+                    Built a Spot Micro based quadruped robot pet that provides walking support and voice interaction through fine tuned AI.
+                  </div>
+                  <div class="proj-meta">
+                    <div class="proj-meta-row">
+                      <span class="badge-year">2023.11 - 2023.12</span>
+                      <a href="https://github.com/tuuktuc86/RobotPet_forElderly-Disabled" class="proj-github-link" target="_blank"><i class="fab fa-github"></i> GITHUB</a>
+                    </div>
+                    <div class="proj-tags-row">
+                      <span class="badge-tag">#Micro_Spot</span>
+                      <span class="badge-tag">#Quadruped_Robot</span>
+                      <span class="badge-tag">#Fine_Tuned_Chatbot</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project: Power Tool Safety Module -->
+              <div class="proj-row" style="border: none; border-radius: 0; margin-bottom: 0;">
+                <div class="proj-thumb">
+                  <img src="" onerror="this.src='https://placehold.co/300x200/f1f5f9/7c3aed?text=Safety+Module+GIF'">
+                </div>
+                <div class="proj-data">
+                  <div class="proj-title">Power Tool Safety Module</div>
+                  <div class="proj-desc">
+                    Developing a safety module to be installed on power tools. It detects the user's safety status and stops the system in dangerous situations to ensure safety.
+                  </div>
+                  <div class="proj-meta">
+                    <div class="proj-meta-row">
+                      <span class="badge-year">2022.09 - 2022.11</span>
+                      <a href="https://github.com/tuuktuc86/PowerTool_SafetyModule" class="proj-github-link" target="_blank"><i class="fab fa-github"></i> GITHUB</a>
+                    </div>
+                    <div class="proj-tags-row">
+                      <span class="badge-tag">#Power_Tool</span>
+                      <span class="badge-tag">#Hazard_Detection</span>
+                      <span class="badge-tag">#Embedded_Module</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <div class="section-title">Experience</div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <h3>Instructor</h3>
+            <div class="org">KAIST IT Academy</div>
+            <div class="time">2025.03 - Present</div>
+            <details class="exp-details">
+              <summary>Detailed Lecture History</summary>
+              <div class="lecture-table-wrapper">
+                <table class="lecture-table">
+                  <thead>
+                    <tr><th>Date</th><th>Venue</th><th>Topic</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>2026.01.31 - 2026.02.01</td><td>KAIST SW Education Center</td><td>Vibe Coding for Deep Learning (18h)</td></tr>
+                    <tr><td>2025.11.13</td><td>Jungbu Regional Tax Office</td><td>Introduction to Generative AI (2h)</td></tr>
+                    <tr><td>2025.11.06</td><td>Daejeon Regional Tax Office</td><td>Introduction to Generative AI (2h)</td></tr>
+                    <tr><td>2025.07.05 - 2025.07.06</td><td>KAIST SW Education Center</td><td>Introduction to Deep Learning with PyTorch (18h)</td></tr>
+                    <tr><td>2025.05 - 2025.09</td><td>Seocho AI College</td><td>Python/Pandas Fundamentals, Deep Learning Review, Final Project Mentor</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <h3>Military Service</h3>
+            <div class="org">Republic of Korea Airforce</div>
+            <div class="time">2020 - 2021</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AWARDS AND HONORS -->
+      <section id="awards">
+        <div class="section-header">
+          <h2 class="section-title">Awards & Honors</h2>
+        </div>
+        <div class="list-container">
+          <div class="list-item">
+            <div class="list-date">2024</div>
+            <div class="list-content">
+              <h4>Talent Award of Korea 
+                <a href="https://www.mk.co.kr/en/society/11199824" target="_blank" class="news-link"><i class="fas fa-newspaper"></i></a>
+              </h4>
+              <p>Recognized for outstanding academic and leadership potential.</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-date">2023 - 2024</div>
+            <div class="list-content">
+              <h4>Kwanjeong Lee Jong-Hwan Educational Foundation Scholarship</h4>
+              <p>Selected as a scholarship recipient with $8,000/year funding.</p>
+            </div>
+          </div>
+          <details class="exp-details" style="margin-top: 1.5rem;">
+            <summary>Additional Awards & Honors</summary>
+            <div style="padding: 1rem 0;">
+              <div class="list-item" style="border: none; border-bottom: 1px solid var(--bg-card); border-radius: 0; margin-bottom: 0;">
+                <div class="list-date">2024</div>
+                <div class="list-content">
+                  <h4>22nd Gwangju Share Leader 
+                    <a href="https://www.namdonews.com/news/articleView.html?idxno=759896" target="_blank" class="news-link"><i class="fas fa-newspaper"></i></a>
+                  </h4>
+                  <p>Awarded by the Community Chest of Korea.</p>
+                </div>
+              </div>
+              <div class="list-item" style="border: none; border-bottom: 1px solid var(--bg-card); border-radius: 0; margin-bottom: 0;">
+                <div class="list-date">2023</div>
+                <div class="list-content">
+                  <h4>Defy Conference Pitch Competition 
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7126228917299933184/" target="_blank" class="news-link"><i class="fab fa-linkedin"></i></a>
+                  </h4>
+                  <p>Ignite & Innovative Award.</p>
+                </div>
+              </div>
+              <div class="list-item" style="border: none; border-bottom: 1px solid var(--bg-card); border-radius: 0; margin-bottom: 0;">
+                <div class="list-date">2023</div>
+                <div class="list-content">
+                  <h4>Oasis Hackathon</h4>
+                  <p>Merit Award for developing innovative technical solutions.</p>
+                </div>
+              </div>
+              <div class="list-item" style="border: none; border-bottom: 1px solid var(--bg-card); border-radius: 0; margin-bottom: 0;">
+                <div class="list-date">2023</div>
+                <div class="list-content">
+                  <h4>Rookie Startup Camp 
+                    <a href="https://daily.hankooki.com/news/articleView.html?idxno=1002594" target="_blank" class="news-link"><i class="fas fa-newspaper"></i></a>
+                  </h4>
+                  <p>Chairman’s Award from the Korea Angel Investment Association.</p>
+                </div>
+              </div>
+              <div class="list-item" style="border: none; border-radius: 0; margin-bottom: 0;">
+                <div class="list-date">2022</div>
+                <div class="list-content">
+                  <h4>Korea Maker Star 
+                    <a href="https://daily.hankooki.com/news/articleView.html?idxno=1002594" target="_blank" class="news-link"><i class="fas fa-newspaper"></i></a>
+                  </h4>
+                  <p>3rd place with a $3,500 prize.</p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="section-title">Education</div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <h3>KAIST</h3>
+            <div class="org">M.S. in Electrical Engineering (Advisor: SooJean Han)</div>
+            <div class="time">2025.02 - Present</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <h3>Chonnam National University</h3>
+            <div class="org">B.S. in Electronic Engineering</div>
+            <div class="time">2019.03 - 2025.02</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year-holder"></span> Yechan Lee. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year-holder').textContent = new Date().getFullYear();
+
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const confSelect = document.getElementById('conf-select');
+
+    window.addEventListener('scroll', () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 120) {
+          current = section.getAttribute("id");
+        }
+      });
+      navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("href").includes(current)) {
+          item.classList.add("active");
+        }
+      });
+    });
+
+    function applyFilters() {
+      const pubRows = document.querySelectorAll('.pub-row');
+      const activeCat = document.querySelector('.filter-btn.active').dataset.category;
+      const selectedConf = confSelect.value;
+      pubRows.forEach(row => {
+        const categories = row.dataset.category.split(' ');
+        const catMatch = activeCat === 'all' || categories.includes(activeCat);
+        const confMatch = selectedConf === 'all' || row.dataset.conf === selectedConf;
+        row.style.display = (catMatch && confMatch) ? 'flex' : 'none';
+      });
+    }
+
+    function updateConfOptions() {
+      const pubRows = document.querySelectorAll('.pub-row');
+      const confs = new Set();
+      pubRows.forEach(row => { if (row.dataset.conf) confs.add(row.dataset.conf); });
+      confSelect.innerHTML = '<option value="all">All Venues</option>';
+      confs.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c; opt.textContent = c; confSelect.appendChild(opt);
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active'); applyFilters();
+      });
+    });
+    confSelect.addEventListener('change', applyFilters);
+
+    updateConfOptions();
+    applyFilters();
+  </script>
+</body>
+</html>
